@@ -33,7 +33,7 @@ export function Hero() {
       />
 
       <div className="container-page">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
           <div className="min-w-0 animate-fade-up">
             <p className="eyebrow mb-3 sm:mb-4">
               <span aria-hidden="true" className="hidden h-px w-6 bg-primary sm:block" />

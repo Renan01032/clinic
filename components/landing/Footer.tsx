@@ -7,13 +7,31 @@ export function Footer() {
       <div className="container-page">
         <div className="flex flex-col gap-6 border-b border-line pb-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-base font-bold text-ink">
-              <Value>{site.brand.name}</Value>
-            </p>
-            <p className="mt-1 text-sm text-muted">{site.brand.tagline}</p>
+            <p className="text-base font-bold text-ink">{site.brand.name}</p>
+            <p className="mt-1 max-w-md text-sm text-muted">{site.course.name}</p>
           </div>
 
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+            <li>
+              <a
+                href={site.contact.whatsappUrl}
+                target="_blank"
+                rel="noopener"
+                className="font-medium text-primary hover:underline"
+              >
+                WhatsApp {site.contact.whatsapp}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.contact.instagramUrl}
+                target="_blank"
+                rel="noopener"
+                className="hover:text-primary"
+              >
+                {site.contact.instagram}
+              </a>
+            </li>
             <li>
               <a href={site.footer.privacyUrl} className="hover:text-primary">
                 Política de Privacidade
@@ -22,11 +40,6 @@ export function Footer() {
             <li>
               <a href={site.footer.termsUrl} className="hover:text-primary">
                 Termos de Uso
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${site.footer.email}`} className="hover:text-primary">
-                Contato
               </a>
             </li>
           </ul>

@@ -72,17 +72,17 @@ export default function Page() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Course',
-            name: site.brand.name,
+            name: site.course.name,
             description: site.seo.description,
             inLanguage: 'pt-BR',
             provider: {
               '@type': 'Organization',
-              name: site.footer.producer,
+              name: site.brand.name,
+              sameAs: site.contact.instagramUrl,
             },
             hasCourseInstance: {
               '@type': 'CourseInstance',
               courseMode: 'online',
-              courseWorkload: site.trustBar[1]?.label,
             },
           }),
         }}

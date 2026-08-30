@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/site';
 import { Analytics } from '@/components/landing/Analytics';
@@ -10,10 +10,12 @@ const body = Inter({
   variable: '--font-sans-body',
 });
 
-const heading = Plus_Jakarta_Sans({
+// Montserrat: mesma família geométrica de caixa-alta usada na arte oficial
+// do minicurso, para a página parecer continuação do anúncio.
+const heading = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['700', '800'],
+  weight: ['600', '700', '800'],
   variable: '--font-sans-heading',
 });
 
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1f5c52',
+  themeColor: '#22496f',
   width: 'device-width',
   initialScale: 1,
   // Deixa a página desenhar por baixo da barra de gestos do iPhone; a barra

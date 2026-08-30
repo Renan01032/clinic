@@ -3,32 +3,48 @@
 @tailwind utilities;
 
 /* ============================================================
-   DESIGN TOKENS
-   Fonte única da identidade visual. Trocar aqui = trocar tudo.
+   DESIGN TOKENS — identidade da Clínica Psiquear
+   Cores amostradas diretamente da arte oficial do minicurso:
+     azul do título/botão .... #214871 → #22496F
+     azul das ondas .......... #194067 → #173D61
+     taupe do "ONLINE" ....... #AB9C97
+     creme da onda inferior .. #F1EEE7
+
    Contrastes verificados (WCAG AA):
-   - primary  #1F5C52 sobre branco ....... 7.8:1
-   - accent   #B85C25 com texto branco ... 4.6:1
-   - muted    #55635F sobre background ... 5.6:1
+   - primary   #22496F sobre o fundo ......... 8.88:1
+   - texto     #1A2430 sobre o fundo ........ 14.92:1
+   - muted     #5C6772 sobre o fundo ......... 5.49:1
+   - accent    #A85E38 com texto branco ...... 4.86:1
+   - branco    sobre a seção escura .......... 11.19:1
+
+   Quer o CTA na cor da marca em vez do terracota?
+   Troque por:  --color-accent: #22496F;  --color-accent-dark: #173D61;
+   (a página continua funcionando — só perde contraste do botão)
    ============================================================ */
 :root {
-  --color-background: #f7f9f8;
+  --color-background: #fbf9f6;
   --color-surface: #ffffff;
-  --color-surface-alt: #eef4f1;
+  --color-surface-alt: #f1eee7;
 
-  --color-primary: #1f5c52;
-  --color-primary-dark: #164039;
-  --color-primary-soft: #dceae5;
+  --color-primary: #22496f;
+  --color-primary-dark: #173d61;
+  --color-primary-soft: #dfe7f0;
 
-  --color-secondary: #e7efe9;
+  --color-secondary: #ede8e2;
 
-  --color-accent: #b85c25;
-  --color-accent-dark: #9e4d1d;
-  --color-accent-soft: #fbeee4;
+  /* Terracota derivado do taupe da marca: mesma família quente,
+     saturado o bastante para o botão não sumir no meio do azul. */
+  --color-accent: #a85e38;
+  --color-accent-dark: #8e4d2c;
+  --color-accent-soft: #f7ece5;
 
-  --color-text: #12201d;
-  --color-text-muted: #55635f;
-  --color-border: #dfe7e3;
-  --color-warn: #9a6a00;
+  /* Neutro quente da marca, para detalhes tipográficos */
+  --color-taupe: #ab9c97;
+
+  --color-text: #1a2430;
+  --color-text-muted: #5c6772;
+  --color-border: #e6e1da;
+  --color-warn: #8a6300;
 
   --font-heading: var(--font-sans-heading), ui-sans-serif, system-ui, -apple-system,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -209,7 +225,7 @@
   }
 
   .h1 {
-    @apply text-[1.85rem] font-extrabold leading-[1.14] sm:text-[2.6rem] lg:text-[3.05rem];
+    @apply text-[1.85rem] font-extrabold leading-[1.14] sm:text-[2.5rem] lg:text-[2.85rem];
   }
 
   /* Destaque da headline que acompanha a quebra de linha sem estourar a tela */

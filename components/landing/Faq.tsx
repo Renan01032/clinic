@@ -77,6 +77,20 @@ export function Faq() {
           );
         })}
       </div>
+
+      {/* Ação secundária, em texto: tira a última objeção sem competir
+          visualmente com o CTA de compra. */}
+      <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-muted">
+        Ficou com outra dúvida?{' '}
+        <a
+          href={site.contact.whatsappUrl}
+          target="_blank"
+          rel="noopener"
+          className="font-semibold text-primary underline underline-offset-2 hover:text-primary-dark"
+        >
+          Fale com a clínica no WhatsApp {site.contact.whatsapp}
+        </a>
+      </p>
     </Section>
   );
 }

@@ -1,4 +1,5 @@
-# Landing page — Minicurso sobre transtornos de humor
+# Transtornos de Humor: Compreensão, Avaliação e Manejo Clínico
+### Landing page do minicurso online — Clínica Psiquear
 
 Landing page de venda direta (tráfego → página → checkout Hotmart), em
 Next.js 15 (App Router) + TypeScript + Tailwind CSS.
@@ -34,16 +35,28 @@ com um anel âmbar** — é proposital, para não publicar uma página com CTA m
 
 Esse é o único arquivo de conteúdo. Tudo que ainda não foi informado está no
 formato `[ALGUMA COISA]` e aparece **destacado em âmbar na página**, para ser
-impossível publicar sem preencher. Pendências atuais:
+impossível publicar sem preencher.
 
-- nome do curso, domínio e imagem OG
+Já preenchido a partir da arte oficial: nome do curso, nome da clínica,
+WhatsApp, Instagram, os três eixos do método, suporte de dúvidas e a imagem
+de compartilhamento.
+
+Pendências:
+
+- domínio real (`site.seo.url`)
 - preço, preço cheio, parcelamento, formas de pagamento
 - prazo da garantia
 - carga horária, nº de módulos, nº de aulas, certificado, tempo de acesso
+- detalhes do suporte no WhatsApp (horário, prazo de resposta, individual ou grupo)
 - instrutor: nome, registro profissional, formação, experiência, credenciais, foto
 - bônus (ou remova a lista: `bonuses: []`)
-- dados do rodapé: produtor, CNPJ, e-mail, política de privacidade, termos
+- dados do rodapé: razão social, CNPJ, e-mail, política de privacidade, termos
 - imagem do hero
+
+Dois pontos a confirmar: a grafia **Psiquear** x Psychera/Psychear
+(`site.brand.name`) e o botão da arte original, que está com o texto cortado
+("SUPORTE DE DÚVIDAS PELO" — falta a última palavra) e aparece assim na imagem
+de compartilhamento.
 
 **Nada foi inventado.** Não há depoimento, número de alunos, nota ou desconto
 fictício no projeto. A seção de prova social só é renderizada quando existirem
@@ -118,8 +131,10 @@ lib/
 ```
 
 Identidade visual: os tokens ficam em `app/globals.css` (`:root`) e o
-`tailwind.config.ts` só aponta para eles. Para trocar a paleta inteira, edite
-apenas o `:root`.
+`tailwind.config.ts` só aponta para eles. As cores foram amostradas da arte
+oficial do minicurso — a documentação da paleta, dos contrastes e das decisões
+está em [`docs/04-identidade-visual.md`](docs/04-identidade-visual.md). Para
+trocar a paleta inteira, edite apenas o `:root`.
 
 ### Detalhes de mobile que valem conhecer antes de editar
 

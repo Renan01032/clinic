@@ -20,12 +20,14 @@ type Props = {
 // que é o que o polegar acerta sem erro em movimento.
 const sizes: Record<Size, string> = {
   md: 'min-h-[50px] px-6 text-[0.95rem]',
-  lg: 'min-h-[58px] px-8 text-base sm:text-lg',
+  lg: 'min-h-[58px] px-5 text-base sm:px-8 sm:text-lg',
 };
 
 const variants: Record<Variant, string> = {
+  // O ring claro garante que a borda do botão continue identificável quando
+  // ele aparece sobre as seções azul-escuras (contraste não textual).
   accent:
-    'bg-accent text-white shadow-md hover:bg-accent-dark active:translate-y-px hover:shadow-lg',
+    'bg-accent text-white shadow-md ring-1 ring-white/25 hover:bg-accent-dark active:translate-y-px hover:shadow-lg',
   primary:
     'bg-primary text-white shadow-md hover:bg-primary-dark active:translate-y-px hover:shadow-lg',
   outline:

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { site } from '@/lib/site';
-import { Value } from '@/components/ui/Placeholder';
 import { CheckoutButton } from '@/components/ui/CheckoutButton';
 
 /**
@@ -25,7 +24,9 @@ export function Header() {
     <header
       className={`relative z-40 border-b transition-colors duration-200 lg:sticky lg:top-0 ${
         scrolled
-          ? 'border-line lg:bg-surface/95 lg:backdrop-blur lg:supports-[backdrop-filter]:bg-surface/80'
+          ? // opaco de verdade: o header cruza seções azul-escuras e o menu
+            // precisa continuar legível por cima delas
+            'border-line lg:bg-surface lg:shadow-sm'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -40,9 +41,7 @@ export function Header() {
           >
             {site.brand.shortName.slice(0, 2).toUpperCase()}
           </span>
-          <span className="max-w-[42vw] truncate sm:max-w-none">
-            <Value>{site.brand.name}</Value>
-          </span>
+          <span className="max-w-[38vw] truncate sm:max-w-none">{site.brand.name}</span>
         </a>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">

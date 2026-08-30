@@ -1,6 +1,7 @@
 # Estratégia de conversão + Copy completa
-**Produto:** minicurso sobre transtornos de humor (depressão, transtorno bipolar, oscilações de humor)
-**Fonte:** documento `curso` do projeto "clinic"
+**Produto:** Transtornos de Humor: Compreensão, Avaliação e Manejo Clínico — minicurso online
+**Produtor:** Clínica Psiquear (@clínicapsiquear · WhatsApp (11) 4309-0533)
+**Fonte:** documento `curso` do projeto "clinic" + arte oficial de divulgação
 **Checkout:** Hotmart (externo)
 
 ---
@@ -38,15 +39,21 @@ Sair do curso com um caminho claro de raciocínio para casos de humor — do pri
 
 ## 6. Mecanismo
 
-Estrutura em três etapas, extraída diretamente das três promessas do material original:
+Os três eixos que dão nome ao próprio minicurso — não foi preciso inventar mecanismo, ele já estava no título:
 
 ```
-COMPREENDER  →  DIFERENCIAR  →  MANEJAR
- o quadro na    o que se parece   com critério
- prática        (dif. diagnóstico) e segurança
+COMPREENSÃO  →   AVALIAÇÃO    →  MANEJO CLÍNICO
+ o quadro na     conduzir a       conduta, acompanhamento
+ clínica real    avaliação e o    e critérios de
+                 dif. diagnóstico encaminhamento
 ```
 
-O diferencial declarado: **conteúdo aplicável, sem excesso de teoria, com foco na clínica real.** É o mecanismo de entrega, e é verdadeiro segundo o material fornecido.
+Dois diferenciais declarados, ambos verdadeiros segundo o material fornecido:
+
+1. **Conteúdo aplicável, sem excesso de teoria, com foco na clínica real.**
+2. **Suporte de dúvidas pelo WhatsApp** — num produto de vídeo gravado, poder
+   perguntar é raro e vale muito para este público. Merece estar dentro da dobra
+   do celular, não escondido numa lista de bônus.
 
 ## 7. Mapa de objeções
 
@@ -61,6 +68,7 @@ O diferencial declarado: **conteúdo aplicável, sem excesso de teoria, com foco
 | "É caro" | Oferta com parcelamento visível e comparação de custo/benefício sóbria |
 | "E se eu não gostar?" | Garantia Hotmart, ao lado do preço |
 | "Substitui supervisão/pós?" | Seção "O que este curso não é" + disclaimer no rodapé |
+| "E se eu travar numa dúvida?" | Suporte no WhatsApp (barra de confiança, features, FAQ) |
 | "Como recebo?" | FAQ + microcopy sob cada CTA |
 
 ## 8. Arquitetura da página
@@ -96,7 +104,7 @@ CTAs em 7 pontos de alta intenção: hero, pós-benefícios, pós-transformaçã
 
 ## 10. Direção visual
 
-Verde-petróleo profundo (autoridade clínica, calma) + areia/terracota no CTA (contraste alto, quente, único). Fundo off-white. Tipografia sem serifa, títulos grandes, muito respiro. Zero estética de "coach", zero cérebro 3D, zero gradiente decorativo. Cartões com borda fina e sombra baixa — mais próximo de material acadêmico premium que de infoproduto.
+Paleta amostrada da arte oficial da clínica: azul-marinho `#22496F` (autoridade clínica), creme `#F1EEE7`, taupe `#AB9C97`, fundo branco levemente quente. O CTA é um terracota `#A85E38` derivado do taupe — a arte não tem cor de ação, e um botão azul sumiria no meio de títulos e seções azuis. Títulos em Montserrat, mesma família da peça de divulgação; corpo em Inter. Zero estética de "coach", zero cérebro 3D, zero gradiente decorativo. Detalhes e contrastes em `04-identidade-visual.md`.
 
 ---
 
@@ -123,7 +131,7 @@ Um minicurso direto ao ponto para compreender os transtornos de humor na prátic
 **CTA:** Quero garantir minha vaga
 **Microcopy:** Acesso imediato após a confirmação · Checkout seguro Hotmart
 
-**Sinais de confiança (barra):** 100% online · [CARGA HORÁRIA] · Certificado · Garantia de [X] dias
+**Sinais de confiança (barra):** 100% online · Suporte no WhatsApp · [CARGA HORÁRIA] · Garantia de [X] dias
 
 ## SECTION 02 — IDENTIFICAÇÃO
 
@@ -159,15 +167,15 @@ Você não precisa decidir tudo no improviso, nem esperar anos de casuística pa
 
 ## SECTION 05 — O MINICURSO
 
-**Título:** [NOME DO CURSO]
+**Título:** Transtornos de Humor: Compreensão, Avaliação e Manejo Clínico
 
 **Descrição:** Um minicurso online, curto e aplicado, criado para profissionais que atendem demandas de humor e querem mais segurança na condução clínica.
 
-**Mecanismo — 3 etapas:**
+**Mecanismo — 3 etapas (os três eixos do nome oficial):**
 
-1. **Compreender** — os principais transtornos de humor como eles aparecem na clínica, não apenas como estão descritos nos manuais.
-2. **Diferenciar** — o que se confunde com o quê, quais sinais mudam a leitura do caso e como sustentar uma hipótese diagnóstica.
-3. **Manejar** — estratégias de condução mais seguras, com critérios de conduta, acompanhamento e encaminhamento.
+1. **Compreensão** — os principais transtornos de humor como eles aparecem na clínica, não apenas como estão descritos nos manuais.
+2. **Avaliação** — como conduzir a avaliação, o que se confunde com o quê e como sustentar uma hipótese diagnóstica.
+3. **Manejo clínico** — estratégias de condução mais seguras, com critérios de conduta, acompanhamento e encaminhamento.
 
 ## SECTION 06 — CONTEÚDO
 
@@ -215,7 +223,7 @@ Estratégias de manejo mais seguras, definição de conduta, acompanhamento da e
 ## SECTION 09 — AUTORIDADE
 
 **Título:** Quem ensina
-**Nome:** [NOME DO INSTRUTOR]
+**Nome:** [NOME DO INSTRUTOR]  ← maior lacuna de conversão da página
 **Profissão/registro:** [PROFISSÃO — CRP/CRM]
 **Formação:** [FORMAÇÃO E ESPECIALIZAÇÕES]
 **Experiência:** [ANOS DE EXPERIÊNCIA / CONTEXTO DE ATUAÇÃO]

@@ -31,6 +31,7 @@ const config: Config = {
           dark: 'var(--color-accent-dark)',
           soft: 'var(--color-accent-soft)',
         },
+        taupe: 'var(--color-taupe)',
         ink: 'var(--color-text)',
         muted: 'var(--color-text-muted)',
         line: 'var(--color-border)',

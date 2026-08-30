@@ -15,6 +15,17 @@ export function Solution() {
         subtitle={site.solution.text}
       />
 
+      {/* Nome oficial do minicurso — o mesmo que aparece na arte do anúncio,
+          para o visitante reconhecer que chegou no lugar certo. */}
+      <div className="mx-auto max-w-2xl rounded-lg border border-line bg-surface-alt px-5 py-5 text-center sm:px-8">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-taupe">
+          {site.course.format}
+        </p>
+        <p className="mt-2 font-heading text-lg font-extrabold uppercase leading-snug tracking-tight text-primary sm:text-2xl">
+          {site.course.name}
+        </p>
+      </div>
+
       <ol className="snap-row mt-8 md:mt-12 md:grid-cols-3">
         {site.solution.steps.map((step, index) => (
           <Reveal as="li" key={step.step} delay={index * 90}>

@@ -45,21 +45,48 @@ export type FaqItem = {
 export const site = {
   /* ---------------------------------------------------------------- MARCA */
   brand: {
-    /** Aparece no header. Se houver logo em /public/images, use logoSrc. */
-    name: P('NOME DO CURSO'),
-    shortName: 'Minicurso',
+    /**
+     * Nome da clínica, exibido no header.
+     * Lido do @ da arte oficial (@clínicapsiquear) — confirme a grafia
+     * (Psiquear x Psychear) antes de publicar.
+     */
+    name: 'Clínica Psiquear',
+    shortName: 'CP',
     logoSrc: null as string | null, // ex.: '/images/logo.svg'
     tagline: 'Minicurso online para profissionais de saúde mental',
   },
 
+  /** Nome oficial do minicurso, conforme a arte de divulgação. */
+  course: {
+    name: 'Transtornos de Humor: Compreensão, Avaliação e Manejo Clínico',
+    shortName: 'Transtornos de Humor',
+    format: 'Minicurso online',
+  },
+
+  /* ------------------------------------------------------------- CONTATO */
+  contact: {
+    /** WhatsApp da arte oficial. Só dígitos no link, com DDI 55. */
+    whatsapp: '(11) 4309-0533',
+    whatsappUrl:
+      'https://wa.me/551143090533?text=' +
+      encodeURIComponent(
+        'Olá! Tenho uma dúvida sobre o minicurso Transtornos de Humor.',
+      ),
+    instagram: '@clínicapsiquear',
+    instagramUrl: 'https://instagram.com/clinicapsiquear',
+  },
+
   /* ------------------------------------------------------------------ SEO */
   seo: {
-    title: `${P('NOME DO CURSO')} — Minicurso online sobre transtornos de humor`,
+    title:
+      'Transtornos de Humor: Compreensão, Avaliação e Manejo Clínico — Minicurso Online',
     description:
       'Minicurso online e aplicado para profissionais de saúde mental: compreender os transtornos de humor na prática, refinar o diagnóstico diferencial e definir um manejo clínico mais seguro.',
     /** Trocar pelo domínio real antes de publicar. */
     url: P('https://SEUDOMINIO.com.br'),
-    ogImage: '/images/og-image.svg',
+    /** Gerada a partir da arte oficial, em 1200x630 (JPEG — SVG não é lido
+     *  pelo WhatsApp nem pelo Facebook). */
+    ogImage: '/images/og-image.jpg',
     locale: 'pt_BR',
   },
 
@@ -127,8 +154,8 @@ export const site = {
   /* ------------------------------------------------------- BARRA DE CONFIANÇA */
   trustBar: [
     { label: '100% online', detail: 'aulas gravadas' },
+    { label: 'Suporte no WhatsApp', detail: 'para tirar dúvidas' },
     { label: P('CARGA HORÁRIA'), detail: 'de conteúdo' },
-    { label: P('CERTIFICADO'), detail: 'de conclusão' },
     { label: P('X') + ' dias', detail: 'de garantia' },
   ],
 
@@ -168,21 +195,21 @@ export const site = {
   solution: {
     eyebrow: 'Existe outro caminho',
     title: 'Você não precisa decidir no improviso',
-    text: 'Com um raciocínio clínico organizado, critérios claros de diferenciação e estratégias de manejo bem definidas, é possível chegar na sessão com muito mais clareza sobre o que observar, o que perguntar e o que fazer em seguida.',
+    text: 'Com um raciocínio clínico organizado, critérios claros de avaliação e estratégias de manejo bem definidas, é possível chegar na sessão com muito mais clareza sobre o que observar, o que perguntar e o que fazer em seguida. São os três eixos que dão nome ao minicurso:',
     steps: [
       {
         step: '01',
-        title: 'Compreender',
+        title: 'Compreensão',
         text: 'Os principais transtornos de humor como eles aparecem na clínica — não apenas como estão descritos nos manuais.',
       },
       {
         step: '02',
-        title: 'Diferenciar',
-        text: 'O que se confunde com o quê, quais sinais mudam a leitura do caso e como sustentar uma hipótese diagnóstica.',
+        title: 'Avaliação',
+        text: 'Como conduzir a avaliação, o que se confunde com o quê e como sustentar uma hipótese diagnóstica.',
       },
       {
         step: '03',
-        title: 'Manejar',
+        title: 'Manejo clínico',
         text: 'Estratégias de condução mais seguras, com critérios de conduta, acompanhamento e encaminhamento.',
       },
     ],
@@ -194,20 +221,20 @@ export const site = {
     title: 'O que você vai ver no minicurso',
     /** Aviso exibido enquanto a grade não for confirmada. Deixe null quando confirmar. */
     draftNotice:
-      'Estrutura de módulos em rascunho, derivada das três promessas do material original — confirmar títulos, ordem e carga horária antes de publicar.',
+      'Grade em rascunho, montada sobre os três eixos do nome oficial do minicurso — confirmar títulos, ordem, número de aulas e carga horária antes de publicar.',
     items: [
       {
         number: '01',
-        title: 'Transtornos de humor na prática clínica',
+        title: 'Compreensão dos transtornos de humor',
         description:
           'Como depressão, transtorno bipolar e as oscilações de humor se apresentam no consultório. O que observar na primeira escuta e quais informações mudam a leitura do caso.',
         outcome: 'Você passa a reconhecer os sinais que realmente orientam a avaliação.',
       },
       {
         number: '02',
-        title: 'Raciocínio clínico e diagnóstico diferencial',
+        title: 'Avaliação e diagnóstico diferencial',
         description:
-          'Os quadros que mais se confundem entre si e os critérios que ajudam a separá-los. Como construir e sustentar uma hipótese diagnóstica sem atropelar a avaliação.',
+          'Como conduzir uma avaliação adequada: os quadros que mais se confundem entre si, os critérios que ajudam a separá-los e como sustentar uma hipótese diagnóstica.',
         outcome: 'Você organiza o raciocínio em vez de decidir por impressão.',
       },
       {
@@ -257,6 +284,7 @@ export const site = {
       items: [
         'Aulas online gravadas, liberadas de uma vez',
         'Acesso pelo celular, tablet ou computador',
+        'Suporte de dúvidas pelo WhatsApp',
         'Material complementar de apoio',
         P('CERTIFICADO'),
         P('TEMPO DE ACESSO'),
@@ -347,6 +375,7 @@ export const site = {
       'Minicurso completo em vídeo',
       P('Nº DE MÓDULOS') + ' módulos',
       P('Nº DE AULAS') + ' aulas',
+      'Suporte de dúvidas pelo WhatsApp',
       'Material complementar',
       P('CERTIFICADO'),
       'Acesso online, no seu ritmo',
@@ -414,6 +443,12 @@ export const site = {
       answer: P('CERTIFICADO — confirmar emissão, carga horária e formato'),
     },
     {
+      question: 'Consigo tirar dúvidas durante o curso?',
+      answer:
+        'Sim. O minicurso inclui suporte de dúvidas pelo WhatsApp — você não fica sozinho com o conteúdo. ' +
+        P('DETALHAR: horário de atendimento, prazo de resposta e se o suporte é individual ou em grupo'),
+    },
+    {
       question: 'Preciso de conhecimento prévio?',
       answer:
         'O conteúdo é voltado a quem já tem formação ou está em formação na área da saúde mental. Não é necessário conhecimento avançado sobre transtornos de humor — o curso organiza o raciocínio desde a leitura do quadro.',
@@ -461,7 +496,7 @@ export const site = {
 
   /* --------------------------------------------------------------- RODAPÉ */
   footer: {
-    producer: P('NOME DO PRODUTOR / EMPRESA'),
+    producer: P('RAZÃO SOCIAL DA CLÍNICA'),
     document: P('CNPJ'),
     email: P('E-MAIL DE CONTATO'),
     privacyUrl: P('URL DA POLÍTICA DE PRIVACIDADE'),
