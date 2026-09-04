@@ -1,47 +1,41 @@
-# Identidade visual — Clínica Psychëar
+# Identidade visual — Clínica Psiquear
 
-> **Atualização:** as duas pendências abertas na versão anterior deste
-> documento foram resolvidas com base no portfólio profissional oficial de
-> Andréa Felix (PDF fornecido pela clínica). Ver seção final.
-
-As cores agora são **amostradas diretamente da logo oficial** (o mark da
-borboleta, extraído em alta resolução do portfólio), não apenas da arte de
-divulgação do minicurso — que é uma peça de campanha e pode mudar a cada
-lançamento, enquanto a logo é a identidade permanente da marca.
+As cores foram **amostradas diretamente da arte oficial** do minicurso, não
+escolhidas por aproximação. Todas vivem no `:root` de `app/globals.css`; o
+Tailwind só aponta para elas.
 
 ## Paleta
 
-| Onde aparece | Hex | Token |
+| Onde aparece na arte | Hex | Token |
 |---|---|---|
-| Azul do título, botão e traço da logo | `#0A4878` (logo) → **`#22496F`** | `--color-primary` |
+| Azul do título e do botão | `#214871` → **`#22496F`** | `--color-primary` |
 | Azul profundo das ondas | `#194067` → **`#173D61`** | `--color-primary-dark` |
-| Asa rosa da borboleta (logo) | `#C89090` → escurecida para **`#A66357`** | `--color-accent` (CTA) |
-| Asa areia da borboleta (logo) | `#D9BBA4` → escurecida para **`#A88367`** | `--color-taupe` |
+| Taupe do "ONLINE" | **`#AB9C97`** | `--color-taupe` |
 | Creme da onda inferior | **`#F1EEE7`** | `--color-surface-alt` |
 | Fundo | branco → **`#FBF9F6`** (branco levemente quente) | `--color-background` |
+| — (novo) | **`#A85E38`** terracota | `--color-accent` (CTA) |
 
-### Por que o accent não é mais um terracota
+### Por que um terracota se ele não está na arte
 
-A versão anterior usava um terracota (`#A85E38`) que não existia em nenhuma
-peça da marca — foi uma aproximação porque, na época, só tínhamos a arte de
-divulgação (azul + neutros) e o botão de compra precisava de um elemento
-visualmente distinto.
+A arte só tem azul e neutros quentes. Um CTA azul se dissolveria no meio de
+títulos azuis, seções azuis e ícones azuis — e o botão de compra precisa ser o
+elemento mais distinto da página.
 
-Com o portfólio oficial em mãos, a logo revela que a marca **já tem** uma
-segunda cor: o rosa da asa da borboleta. É essa cor que agora é o
-`--color-accent` — só escurecida o suficiente para o texto branco do botão
-ficar legível (o rosa puro da logo, `#C89090`, dá apenas 2.7:1 de contraste
-contra branco; escurecido para `#A66357`, sobe para 4.62:1 → passa AA).
+O `#A85E38` é o taupe da marca (`#AB9C97`) puxado para saturação e profundidade:
+mesma família quente, contraste alto. Números:
 
-O botão continua sendo o elemento mais distinto da página, mas agora é
-literalmente "o rosa da marca", não uma cor emprestada de outra família.
+- texto branco sobre o botão: **4.86:1** (AA para texto normal)
+- botão contra o fundo creme: **4.62:1**
 
-Se preferir manter o CTA na cor azul:
+Se preferir manter só as cores da arte, troque duas linhas no `:root`:
 
 ```css
 --color-accent: #22496f;
 --color-accent-dark: #173d61;
 ```
+
+A página continua funcionando — perde contraste do botão, e isso normalmente
+custa conversão. Vale testar em A/B antes de decidir por gosto.
 
 ## Contrastes verificados (WCAG AA)
 
@@ -51,59 +45,36 @@ Se preferir manter o CTA na cor azul:
 | Azul primário sobre o fundo | 8.88:1 | ✅ AAA |
 | Texto secundário `#5C6772` sobre o fundo | 5.49:1 | ✅ AA |
 | Branco sobre a seção azul-escura | 11.19:1 | ✅ AAA |
-| Branco sobre o CTA rosa (`#A66357`) | 4.62:1 | ✅ AA |
-| Branco sobre o CTA rosa, hover (`#8F5044`) | 6.18:1 | ✅ AA+ |
-| CTA contra a seção azul-escura | ~2.3:1 | ⚠️ resolvido com um `ring` claro na borda do botão |
-
-`--color-taupe` (`#A88367`) é usada só como rótulo decorativo pequeno
-(uppercase, tracked) em `Solution.tsx` — não carrega texto essencial, então
-não é cobrada com o mesmo rigor de AA que corpo de texto.
+| Branco sobre o CTA terracota | 4.86:1 | ✅ AA |
+| CTA contra a seção azul-escura | 2.30:1 | ⚠️ resolvido com um `ring` claro na borda do botão |
 
 ## Tipografia
 
 - **Títulos: Montserrat** (600/700/800) — mesma família geométrica de caixa-alta
-  da arte de divulgação, para a página parecer continuação do anúncio.
+  da arte, para a página parecer continuação do anúncio.
 - **Corpo: Inter** — alta legibilidade em texto corrido e em tela pequena.
 
-Isso continua válido mesmo depois de olhar o portfólio: lá, os títulos usam
-uma serifada elegante (script na logo, serifada nas lâminas), mas esse é o
-registro visual do *portfólio pessoal* da Andréa — um documento diferente,
-para uma audiência diferente (prospects institucionais, não alunos de
-minicurso). Misturar as duas tipografias deixaria a página com identidade
-dividida. Optamos por manter a página fiel à campanha específica deste
-produto.
+Os títulos da página **não** são em caixa-alta como na arte: caixa-alta em
+frases longas derruba a velocidade de leitura. O caixa-alta ficou reservado
+para o nome oficial do curso (bloco na seção "Como funciona") e para os
+rótulos de seção, que é onde ele funciona.
 
-Os títulos da página continuam **sem** caixa-alta nas frases longas —
-caixa-alta fica reservado para o nome oficial do curso e rótulos de seção.
+## Onde os dados da arte entraram
 
-## Fotografia
+| Informação da arte | Onde está na página |
+|---|---|
+| Nome oficial do minicurso | `<title>`, SEO, bloco de destaque na seção "Como funciona", rodapé, dados estruturados |
+| Compreensão / Avaliação / Manejo | Renomeou os três eixos do método **e** os três módulos |
+| Suporte de dúvidas pelo WhatsApp | Barra de confiança (dentro da dobra do celular), lista de features, "o que está incluído", uma pergunta nova no FAQ e um link ao fim do FAQ |
+| (11) 4309-0533 | Link `wa.me` com mensagem pronta, no FAQ e no rodapé |
+| @clínicapsiquear | Rodapé e `sameAs` dos dados estruturados |
+| A arte inteira | Virou a imagem de compartilhamento (OG 1200×630) e ficou salva em `public/images/arte-minicurso.jpg` |
 
-Antes: a imagem do Hero e o OG image usavam a arte de divulgação, com um
-efeito de rostos sobrepostos (dupla exposição) que não é uma foto real de
-ninguém envolvido no curso.
+## Dois pontos para você conferir
 
-Agora:
-
-| Uso | Arquivo | Origem |
-|---|---|---|
-| Hero (`site.hero.image`) | `public/images/hero-andrea.jpg` | Recorte paisagem do portfólio oficial |
-| Quem ensina (`site.instructor.photo`) | `public/images/instructor-andrea.jpg` | Retrato P&B do portfólio oficial |
-| Logo do header/rodapé | `public/images/logo.png` | Logo oficial, com transparência reconstruída (o PDF exportava com fundo preto sólido) |
-| OG image (compartilhamento) | `public/images/og-image.jpg` | Regerado com a foto real + paleta atual, no lugar da arte com dupla exposição |
-
-`public/images/arte-minicurso.jpg` foi mantida no repositório (não está mais
-referenciada em código) como material de campanha para redes sociais, mas
-deixou de ser a imagem de compartilhamento do site.
-
-## Dois pontos resolvidos
-
-1. **Grafia do nome.** Confirmada pelo portfólio: a marca é **Clínica
-   Psychëar** (com trema, no logo) / **Psychear** em texto corrido. O
-   `@clinicapsiquear` do Instagram é grafado sem acento só por restrição da
-   própria plataforma — não é uma grafia alternativa do nome. `site.brand.name`
-   já está atualizado.
-2. **Botão "SUPORTE DE DÚVIDAS PELO" cortado na arte.** Olhando a peça
-   original com mais contexto: não é um corte de texto, é um selo
-   ("SUPORTE DE DÚVIDAS PELO") posicionado imediatamente acima do ícone do
-   WhatsApp + número — o conjunto se lê como uma frase só por proximidade
-   visual. Não é um erro na arte; não precisa de correção.
+1. **Grafia do nome.** A arte traz `@clínicapsiquear`; em conversas anteriores
+   apareceu "Psychear". A página está com **Clínica Psiquear** — confirme qual é
+   a correta, está em `site.brand.name`.
+2. **O botão da arte está com o texto cortado**: "SUPORTE DE DÚVIDAS PELO" —
+   falta a última palavra. Como isso aparece na imagem de compartilhamento,
+   vale corrigir a arte original. Não alterei a peça de vocês.

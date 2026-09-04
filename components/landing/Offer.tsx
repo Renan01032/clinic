@@ -69,11 +69,9 @@ export function Offer() {
                 ou <Value>{site.offer.installments}</Value>
               </p>
 
-              {site.offer.paymentMethods ? (
-                <p className="mt-1 text-sm text-muted">
-                  <Value>{site.offer.paymentMethods}</Value>
-                </p>
-              ) : null}
+              <p className="mt-1 text-sm text-muted">
+                <Value>{site.offer.paymentMethods}</Value>
+              </p>
 
               {site.offer.urgency ? (
                 <p className="mt-4 inline-block rounded-full bg-accent-soft px-4 py-1.5 text-sm font-semibold text-accent-dark">

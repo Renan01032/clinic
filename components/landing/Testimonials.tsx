@@ -58,12 +58,6 @@ export function Testimonials() {
           arraste para ver mais
         </p>
       ) : null}
-
-      {items.length > 0 && site.testimonialsNote ? (
-        <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted">
-          {site.testimonialsNote}
-        </p>
-      ) : null}
     </Section>
   );
 }

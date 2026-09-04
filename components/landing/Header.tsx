@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { site } from '@/lib/site';
 import { CheckoutButton } from '@/components/ui/CheckoutButton';
 
@@ -36,24 +35,12 @@ export function Header() {
           href="#topo"
           className="flex items-center gap-2 text-sm font-bold leading-tight text-ink"
         >
-          {site.brand.logoSrc ? (
-            <Image
-              src={site.brand.logoSrc}
-              alt=""
-              aria-hidden="true"
-              width={36}
-              height={32}
-              className="h-8 w-auto shrink-0"
-              priority
-            />
-          ) : (
-            <span
-              aria-hidden="true"
-              className="grid h-8 w-8 place-items-center rounded-md bg-primary text-[13px] font-black text-white"
-            >
-              {site.brand.shortName.slice(0, 2).toUpperCase()}
-            </span>
-          )}
+          <span
+            aria-hidden="true"
+            className="grid h-8 w-8 place-items-center rounded-md bg-primary text-[13px] font-black text-white"
+          >
+            {site.brand.shortName.slice(0, 2).toUpperCase()}
+          </span>
           <span className="max-w-[38vw] truncate sm:max-w-none">{site.brand.name}</span>
         </a>
 

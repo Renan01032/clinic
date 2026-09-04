@@ -14,12 +14,8 @@ export function Included() {
     <Section tone="default">
       <SectionHeader eyebrow={site.included.eyebrow} title={site.included.title} />
 
-      <div className={`grid gap-5 ${bonuses.length > 0 ? 'lg:grid-cols-2' : ''}`}>
-        <ul
-          className={`grid grid-cols-2 gap-x-3 gap-y-2.5 rounded-lg border border-line bg-surface p-5 shadow-sm sm:gap-3 sm:p-7 ${
-            bonuses.length === 0 ? 'mx-auto w-full max-w-2xl lg:grid-cols-3' : ''
-          }`}
-        >
+      <div className="grid gap-5 lg:grid-cols-2">
+        <ul className="grid grid-cols-2 gap-x-3 gap-y-2.5 rounded-lg border border-line bg-surface p-5 shadow-sm sm:gap-3 sm:p-7">
           {site.included.items.map((item) => (
             <li
               key={item}

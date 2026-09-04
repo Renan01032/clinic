@@ -2,8 +2,12 @@ import { site } from '@/lib/site';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { Reveal } from '@/components/ui/Reveal';
 import { CheckIcon } from '@/components/ui/Icons';
+import { Value } from '@/components/ui/Placeholder';
 
-/** Benefícios — o que muda na prática do profissional depois do minicurso. */
+/**
+ * Benefícios (o que muda na prática) em destaque; features em segundo plano.
+ * A página vende principalmente o benefício.
+ */
 export function Benefits() {
   return (
     <Section id="beneficios" tone="surface">
@@ -31,6 +35,21 @@ export function Benefits() {
             </div>
           </Reveal>
         ))}
+      </div>
+
+      <div className="mt-8 rounded-lg border border-line bg-surface-alt p-5 sm:mt-10 sm:p-8">
+        <h3 className="h3 mb-4 text-ink sm:mb-5">{site.benefits.features.title}</h3>
+        <ul className="grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+          {site.benefits.features.items.map((feature) => (
+            <li
+              key={feature}
+              className="flex items-start gap-2.5 text-[0.9rem] text-ink sm:text-[0.95rem]"
+            >
+              <CheckIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-primary" />
+              <Value>{feature}</Value>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );

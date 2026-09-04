@@ -10,11 +10,7 @@ import { PlayIcon, SwipeIcon } from '@/components/ui/Icons';
 export function Modules() {
   return (
     <Section id="conteudo" tone="default">
-      <SectionHeader
-        eyebrow={site.modules.eyebrow}
-        title={site.modules.title}
-        subtitle={site.modules.subtitle}
-      />
+      <SectionHeader eyebrow={site.modules.eyebrow} title={site.modules.title} />
 
       {site.modules.draftNotice ? (
         <p className="mx-auto -mt-4 mb-10 max-w-2xl rounded-md border border-dashed border-amber-300 bg-amber-50/70 px-4 py-3 text-center font-mono text-xs leading-relaxed text-warn">
