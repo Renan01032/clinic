@@ -479,8 +479,6 @@ export const site = {
      * na fatura do cartão / recibo da Hotmart.
      */
     producer: 'Clínica Psychëar (Psiquear Cursos)',
-    producer: 'Clínica Psychëar (Psiquear Cursos)',
->>>>>>> b4219c01abf0737cfc2970741ef340557dbd2af1
     document: P('CNPJ'),
     email: P('E-MAIL DE CONTATO'),
     privacyUrl: P('URL DA POLÍTICA DE PRIVACIDADE'),
