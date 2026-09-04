@@ -46,13 +46,14 @@ export const site = {
   /* ---------------------------------------------------------------- MARCA */
   brand: {
     /**
-     * Nome da clínica, exibido no header.
-     * Lido do @ da arte oficial (@clínicapsiquear) — confirme a grafia
-     * (Psiquear x Psychear) antes de publicar.
+     * Grafia confirmada a partir do portfólio oficial (logo + texto corrido):
+     * "Clínica Psychëar" na marca, "Psychear" em texto plano, e o
+     * @clinicapsiquear (sem acento) só no @ do Instagram — restrição da
+     * própria plataforma, não é grafia alternativa do nome.
      */
-    name: 'Clínica Psiquear',
-    shortName: 'CP',
-    logoSrc: null as string | null, // ex.: '/images/logo.svg'
+    name: 'Clínica Psychëar',
+    shortName: 'PS',
+    logoSrc: '/images/logo.png',
     tagline: 'Minicurso online para profissionais de saúde mental',
   },
 
@@ -72,7 +73,7 @@ export const site = {
       encodeURIComponent(
         'Olá! Tenho uma dúvida sobre o minicurso Transtornos de Humor.',
       ),
-    instagram: '@clínicapsiquear',
+    instagram: '@clinicapsiquear',
     instagramUrl: 'https://instagram.com/clinicapsiquear',
   },
 
@@ -144,10 +145,10 @@ export const site = {
     ctaMini: 'Quero a vaga',
     microcopy: 'Acesso imediato após a confirmação · Checkout seguro Hotmart',
     microcopyMobile: 'Acesso imediato · Checkout seguro Hotmart',
-    /** Imagem principal. Substitua por foto real do instrutor ou mockup do curso. */
+    /** Foto real de Andréa Felix, extraída do portfólio profissional dela. */
     image: {
-      src: null as string | null, // ex.: '/images/hero.jpg'
-      alt: 'Profissional de saúde mental em atendimento clínico',
+      src: '/images/hero-andrea.jpg' as string | null,
+      alt: 'Andréa Felix, psicóloga e psicanalista, idealizadora do minicurso',
     },
   },
 
@@ -314,29 +315,65 @@ export const site = {
     ],
   },
 
-  /* ------------------------------------------------------------ AUTORIDADE */
+  /* ------------------------------------------------------------ AUTORIDADE
+     Dados e foto vindos do portfólio profissional real de Andréa Felix.
+     Número de registro (CRP) não constava no material recebido — mantido
+     como placeholder até ela confirmar, em vez de inventado.
+     -------------------------------------------------------------------- */
   instructor: {
     eyebrow: 'Quem ensina',
     title: 'Quem está por trás do minicurso',
-    name: P('NOME DO INSTRUTOR'),
-    role: P('PROFISSÃO — CRP/CRM'),
-    photo: null as string | null, // ex.: '/images/instrutor.jpg'
+    name: 'Andréa Felix',
+    role: 'Psicóloga e Psicanalista',
+    /** Número de registro (CRP) não constava no portfólio recebido. */
+    registration: P('CRP'),
+    photo: '/images/instructor-andrea.jpg' as string | null,
     bio: [
-      P('FORMAÇÃO E ESPECIALIZAÇÕES'),
-      P('EXPERIÊNCIA CLÍNICA — anos de atuação, contexto, instituições'),
+      'Psicóloga e psicanalista, CEO da Clínica Psychëar, com mais de 10 anos de atuação clínica em saúde mental e mais de 27 anos de experiência no magistério.',
+      'Atua articulando prática clínica, formação profissional e gestão — com rigor técnico, ética profissional e escuta clínica qualificada. Já conduziu cursos, capacitações, grupos de estudo e supervisão para psicólogos e estudantes de psicologia.',
     ],
     credentials: [
-      P('CREDENCIAL 1'),
-      P('CREDENCIAL 2'),
-      P('CREDENCIAL 3'),
+      'CEO da Clínica Psychëar',
+      '+10 anos de atuação clínica',
+      '+27 anos de experiência no magistério',
+      'Condução de cursos, grupos de estudo e supervisão',
     ],
+    /** Citação real, adaptada do portfólio profissional dela. */
+    quote:
+      'Ensinar é, para mim, um compromisso sério — que exige estudo contínuo e responsabilidade clínica.',
   },
 
   /* ---------------------------------------------------------- PROVA SOCIAL
-     Nenhum depoimento inventado. A seção só é renderizada quando houver
-     depoimentos reais neste array.
+     Depoimentos reais, do portfólio profissional de Andréa Felix — porém
+     sobre OUTRAS formações dela (curso de avaliação psicológica, masterclass
+     sobre paciente borderline), não sobre este minicurso especificamente,
+     que ainda não tem turma concluída. Parafraseados e encurtados para o
+     formato de card; sobrenome e @ omitidos por privacidade. O aviso em
+     `testimonialsNote` existe para a página nunca implicar que são
+     depoimentos sobre o minicurso de transtornos de humor.
      -------------------------------------------------------------------- */
-  testimonials: [] as Testimonial[],
+  testimonials: [
+    {
+      quote:
+        'Andréa domina o assunto e explica de um jeito bem didático, com vários exemplos práticos.',
+      author: 'Nathália',
+      role: 'Psicóloga',
+    },
+    {
+      quote: 'Já fiz outros cursos e a condução dela foi a melhor que vi até hoje.',
+      author: 'Laryssa',
+      role: 'Psicóloga',
+    },
+    {
+      quote: 'A masterclass ampliou muito meu olhar clínico — didática impecável do início ao fim.',
+      author: 'Liliane',
+      role: 'Psicóloga',
+    },
+  ] as Testimonial[],
+
+  /** Aviso de honestidade exibido junto aos depoimentos (ver nota acima). */
+  testimonialsNote:
+    'Depoimentos de participantes de outras formações e capacitações conduzidas pela Andréa Felix.',
 
   /** Números só entram aqui quando forem verificáveis. Vazio = seção oculta. */
   stats: [] as { value: string; label: string }[],
@@ -496,7 +533,7 @@ export const site = {
 
   /* --------------------------------------------------------------- RODAPÉ */
   footer: {
-    producer: P('RAZÃO SOCIAL DA CLÍNICA'),
+    producer: 'Clínica Psychëar',
     document: P('CNPJ'),
     email: P('E-MAIL DE CONTATO'),
     privacyUrl: P('URL DA POLÍTICA DE PRIVACIDADE'),
