@@ -3,21 +3,31 @@
 @tailwind utilities;
 
 /* ============================================================
-   DESIGN TOKENS — identidade da Clínica Psiquear
-   Cores amostradas diretamente da arte oficial do minicurso:
-     azul do título/botão .... #214871 → #22496F
-     azul das ondas .......... #194067 → #173D61
-     taupe do "ONLINE" ....... #AB9C97
-     creme da onda inferior .. #F1EEE7
+   DESIGN TOKENS — identidade da Clínica Psychëar
+   Cores agora amostradas diretamente da LOGO oficial (butterfly mark do
+   portfólio da Andréa Felix), não apenas da arte de divulgação do minicurso:
+     azul do título/botão/logo ... #0A4878 → aproximado a #22496F (já em uso)
+     azul das ondas ............... #194067 → #173D61
+     asa rosa da borboleta ........ #C89090 → escurecida para #A66357 (accent)
+     asa areia da borboleta ....... #D9BBA4 → escurecida para #A88367 (taupe)
+     creme da onda inferior ....... #F1EEE7
 
    Contrastes verificados (WCAG AA):
    - primary   #22496F sobre o fundo ......... 8.88:1
    - texto     #1A2430 sobre o fundo ........ 14.92:1
    - muted     #5C6772 sobre o fundo ......... 5.49:1
-   - accent    #A85E38 com texto branco ...... 4.86:1
+   - accent    #A66357 com texto branco ...... 4.62:1
+   - accent-dark #8F5044 com texto branco .... 6.18:1
    - branco    sobre a seção escura .......... 11.19:1
 
-   Quer o CTA na cor da marca em vez do terracota?
+   Por que o accent não é o rosa puro da logo (#C89090)
+   -----------------------------------------------------
+   O rosa da borboleta, puro, só dá 2.7:1 contra branco — falha WCAG AA em
+   botão de texto. Escurecemos a MESMA cor (mesmo matiz, mais profundidade)
+   em vez de trocar por um terracota genérico: o botão continua sendo "o
+   rosa da marca", só escuro o bastante para o texto branco ser legível.
+
+   Quer o CTA na cor azul em vez do rosa?
    Troque por:  --color-accent: #22496F;  --color-accent-dark: #173D61;
    (a página continua funcionando — só perde contraste do botão)
    ============================================================ */
@@ -32,14 +42,16 @@
 
   --color-secondary: #ede8e2;
 
-  /* Terracota derivado do taupe da marca: mesma família quente,
-     saturado o bastante para o botão não sumir no meio do azul. */
-  --color-accent: #a85e38;
-  --color-accent-dark: #8e4d2c;
-  --color-accent-soft: #f7ece5;
+  /* Rosa da asa da borboleta (logo oficial), escurecido para contraste AA
+     com texto branco. Mesma família de cor da marca — não é mais um
+     terracota inventado. */
+  --color-accent: #a66357;
+  --color-accent-dark: #8f5044;
+  --color-accent-soft: #f2e3df;
 
-  /* Neutro quente da marca, para detalhes tipográficos */
-  --color-taupe: #ab9c97;
+  /* Bege/areia da outra asa da borboleta (logo oficial), escurecido para
+     ficar legível como texto pequeno. */
+  --color-taupe: #a88367;
 
   --color-text: #1a2430;
   --color-text-muted: #5c6772;

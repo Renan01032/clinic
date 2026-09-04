@@ -3,17 +3,13 @@ import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
 import { Identification } from '@/components/landing/Identification';
 import { Agitation } from '@/components/landing/Agitation';
-import { Solution } from '@/components/landing/Solution';
 import { Modules } from '@/components/landing/Modules';
 import { Benefits } from '@/components/landing/Benefits';
-import { CtaBand } from '@/components/landing/CtaBand';
 import { Audience } from '@/components/landing/Audience';
 import { Instructor } from '@/components/landing/Instructor';
 import { Testimonials } from '@/components/landing/Testimonials';
-import { Transformation } from '@/components/landing/Transformation';
 import { Included } from '@/components/landing/Included';
 import { Offer } from '@/components/landing/Offer';
-import { Guarantee } from '@/components/landing/Guarantee';
 import { Faq } from '@/components/landing/Faq';
 import { FinalCta } from '@/components/landing/FinalCta';
 import { Footer } from '@/components/landing/Footer';
@@ -21,8 +17,16 @@ import { StickyMobileCta } from '@/components/landing/StickyMobileCta';
 
 /**
  * Ordem das seções = ordem do funil.
- * ATENÇÃO → IDENTIFICAÇÃO → PROBLEMA → DESEJO → MECANISMO → CURSO →
- * PROVA → OFERTA → RISCO → CTA → HOTMART
+ * ATENÇÃO → IDENTIFICAÇÃO → PROBLEMA → MECANISMO/CONTEÚDO → BENEFÍCIOS →
+ * PARA QUEM → PROVA → OFERTA (com garantia embutida) → FAQ → CTA → HOTMART
+ *
+ * Enxugado (havia 19 blocos, hoje são 14): a página tinha uma seção
+ * "Solução" e outra "Módulos" contando os mesmos 3 eixos (Compreensão/
+ * Avaliação/Manejo), uma seção "Transformação" repetindo os benefícios com
+ * outras palavras, uma seção "Garantia" isolada repetindo o que já aparece
+ * junto ao preço, e duas faixas de CTA extras além de Hero + Oferta +
+ * FinalCta + barra fixa do mobile. Removidas — o conteúdo real não mudou,
+ * só parou de se repetir. Histórico completo no git.
  */
 export default function Page() {
   return (
@@ -33,31 +37,13 @@ export default function Page() {
         <Hero />
         <Identification />
         <Agitation />
-        <Solution />
         <Modules />
         <Benefits />
-
-        <CtaBand
-          title="Se isso faz sentido para o seu momento, o acesso é imediato."
-          label="Quero garantir minha vaga"
-          placement="beneficios"
-        />
-
         <Audience />
         <Instructor />
         <Testimonials />
-        <Transformation />
-
-        <CtaBand
-          title="Comece hoje a organizar seu raciocínio clínico em casos de humor."
-          label="Quero acessar o minicurso"
-          placement="transformacao"
-          tone="dark"
-        />
-
         <Included />
         <Offer />
-        <Guarantee />
         <Faq />
         <FinalCta />
       </main>
