@@ -1,9 +1,5 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { site } from '@/lib/site';
-import { DEFAULT_VARIANT, getVariant, type Variant } from '@/lib/ab';
 import { CheckoutButton, CtaMicrocopy } from '@/components/ui/CheckoutButton';
 import { PlaceholderBox, Value } from '@/components/ui/Placeholder';
 import { trustIcons } from '@/components/ui/Icons';
@@ -13,16 +9,7 @@ import { trustIcons } from '@/components/ui/Icons';
  * confiança. O usuário não precisa rolar para entender o que está sendo vendido.
  */
 export function Hero() {
-  const [variant, setVariant] = useState<Variant>(DEFAULT_VARIANT);
-
-  // A variante padrão é renderizada no servidor (LCP estável).
-  // Só troca se a URL pedir explicitamente ?v=a|b|c.
-  useEffect(() => {
-    const next = getVariant();
-    if (next !== DEFAULT_VARIANT) setVariant(next);
-  }, []);
-
-  const headline = site.hero.headlines[variant];
+  const headline = site.hero.headline;
 
   return (
     <section id="topo" className="relative overflow-hidden bg-background pb-10 pt-5 sm:pt-12 lg:pb-24">

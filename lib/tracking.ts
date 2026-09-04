@@ -12,10 +12,7 @@ import { buildCheckoutUrl } from './checkout';
 export type CtaPlacement =
   | 'header'
   | 'hero'
-  | 'beneficios'
-  | 'transformacao'
   | 'oferta'
-  | 'garantia'
   | 'final'
   | 'sticky_mobile';
 

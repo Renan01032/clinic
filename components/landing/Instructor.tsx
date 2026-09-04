@@ -39,6 +39,11 @@ export function Instructor() {
           <p className="mt-2 text-base font-medium text-primary">
             <Value>{site.instructor.role}</Value>
           </p>
+          {site.instructor.registration ? (
+            <p className="mt-0.5 text-sm text-muted">
+              Registro: <Value>{site.instructor.registration}</Value>
+            </p>
+          ) : null}
 
           <div className="mt-6 space-y-4">
             {site.instructor.bio.map((paragraph) => (
@@ -59,6 +64,15 @@ export function Instructor() {
               </li>
             ))}
           </ul>
+
+          {site.instructor.quote ? (
+            <blockquote className="mt-7 border-l-[3px] border-accent py-1 pl-5 text-[1.05rem] italic leading-relaxed text-ink">
+              “{site.instructor.quote}”
+              <cite className="mt-2 block text-sm font-medium not-italic text-muted">
+                {site.instructor.name}
+              </cite>
+            </blockquote>
+          ) : null}
         </div>
       </div>
     </Section>
