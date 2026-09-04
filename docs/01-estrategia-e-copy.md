@@ -73,34 +73,40 @@ Dois diferenciais declarados, ambos verdadeiros segundo o material fornecido:
 
 ## 8. Arquitetura da página
 
+> **Atualizada após um enxugamento.** A versão original tinha 19 blocos;
+> hoje são 14. Foram removidos: "Nova possibilidade" (repetia os mesmos 3
+> eixos de "O minicurso", só que mais curto), "Transformação" (repetia os
+> itens de "Benefícios" com outras palavras), "Garantia" como seção isolada
+> (a informação já aparece junto ao preço, no checklist, no FAQ e nos CTAs
+> finais — repetir num bloco próprio era redundante) e duas faixas de CTA
+> extras (já há CTA no Hero, na Oferta, no CTA final e na barra fixa do
+> mobile — não faltava chance de comprar, sobrava repetição). Nenhum
+> conteúdo real foi perdido: o que valia a pena ficou nas seções vizinhas.
+
 ```
 01 Header enxuto (âncoras + CTA)
 02 Hero (promessa + CTA + sinais de confiança)
 03 Barra de confiança (formato, carga, certificado, garantia)
 04 Identificação ("você já viveu isso no consultório")
 05 Agitação (o custo clínico de seguir na dúvida)
-06 Nova possibilidade (existe um caminho estruturado)
-07 O minicurso + mecanismo em 3 etapas
-08 Conteúdo / módulos
-09 Benefícios (features x benefícios)  →  CTA
-10 Para quem é / Para quem não é
-11 Autoridade (instrutor)
-12 Prova social (oculta automaticamente se vazia)
-13 Transformação (antes / depois)  →  CTA
-14 O que está incluído + bônus
-15 Oferta (pricing card)  →  CTA principal
-16 Garantia  →  CTA
-17 FAQ
-18 CTA final
-19 Rodapé com disclaimer educacional
-+ Sticky CTA mobile (aparece após o Hero)
+06 O minicurso + mecanismo em 3 etapas / conteúdo e módulos
+07 Benefícios (o que muda na prática)
+08 Para quem é / Para quem não é
+09 Autoridade (instrutor)
+10 Prova social (oculta automaticamente se vazia)
+11 O que está incluído (garantia embutida no item da lista) + bônus
+12 Oferta (pricing card, com selo de garantia ao lado do botão)  →  CTA principal
+13 FAQ
+14 CTA final
++ Rodapé com disclaimer educacional
++ Sticky CTA mobile (aparece após o Hero, some na seção de oferta)
 ```
 
 ## 9. Estratégia de CTA
 
 Um único destino: checkout Hotmart. Texto principal **"Quero garantir minha vaga"**, variando para "Quero acessar o minicurso" nos blocos finais. Microcopy fixa sob todo CTA: *"Você será direcionado com segurança para o checkout da Hotmart."*
 
-CTAs em 7 pontos de alta intenção: hero, pós-benefícios, pós-transformação, oferta, pós-garantia, final, sticky mobile.
+CTAs em 4 pontos de alta intenção: hero, oferta, final, sticky mobile. (Antes eram 7, com duas faixas extras pós-benefícios e pós-transformação — cortadas junto com as seções que as motivavam. Ver seção 8.)
 
 ## 10. Direção visual
 

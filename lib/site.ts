@@ -95,9 +95,14 @@ export const site = {
   checkout: {
     /**
      * NÃO coloque a URL aqui. Defina NEXT_PUBLIC_HOTMART_CHECKOUT_URL no .env.
-     * Este valor é apenas o fallback visível caso a variável não exista.
+     * Este valor é o fallback caso a variável não exista.
+     *
+     * Confirmado com o cliente: o produto "Capacitação Rápida para
+     * Psicólogos e Estudantes da Área" (nome interno no Hotmart, produtor
+     * "Psiquear Cursos") é este mesmo minicurso — o nome de venda na página
+     * é o nome de marketing, o nome no Hotmart é só o cadastro do produto.
      */
-    fallbackUrl: P('URL DO CHECKOUT HOTMART'),
+    fallbackUrl: 'https://pay.hotmart.com/E107360174P',
     /** Código de rastreio da Hotmart (opcional): ?sck=... */
     sckParam: process.env.NEXT_PUBLIC_HOTMART_SCK ?? '',
     microcopy: 'Você será direcionado com segurança para o checkout da Hotmart.',
@@ -106,29 +111,10 @@ export const site = {
   /* ----------------------------------------------------------------- HERO */
   hero: {
     preHeadline: 'Minicurso online para profissionais de saúde mental',
-    /**
-     * Variantes de headline prontas para teste A/B.
-     * Selecione por query string: ?v=a | ?v=b | ?v=c (ver lib/ab.ts)
-     */
-    headlines: {
-      b: {
-        // padrão — orientada a benefício
-        lead: 'Conduza casos de depressão e bipolaridade com um',
-        highlight: 'raciocínio clínico claro',
-        tail: '— do primeiro atendimento ao manejo.',
-      },
-      a: {
-        // emocional
-        lead: 'Quando o caso envolve humor, a',
-        highlight: 'insegurança chega antes do diagnóstico',
-        tail: '. Dá para mudar isso.',
-      },
-      c: {
-        // orientada a problema
-        lead: 'Depressão ou bipolaridade? Um',
-        highlight: 'erro de leitura',
-        tail: 'custa meses na evolução do paciente.',
-      },
+    headline: {
+      lead: 'Conduza casos de depressão e bipolaridade com um',
+      highlight: 'raciocínio clínico claro',
+      tail: '— do primeiro atendimento ao manejo.',
     },
     subheadline:
       'Um minicurso direto ao ponto para compreender os transtornos de humor na prática, refinar o diagnóstico diferencial e definir um manejo mais seguro. Conteúdo aplicável, com foco na clínica real.',
@@ -157,7 +143,7 @@ export const site = {
     { label: '100% online', detail: 'aulas gravadas' },
     { label: 'Suporte no WhatsApp', detail: 'para tirar dúvidas' },
     { label: P('CARGA HORÁRIA'), detail: 'de conteúdo' },
-    { label: P('X') + ' dias', detail: 'de garantia' },
+    { label: '7 dias', detail: 'de garantia' },
   ],
 
   /* -------------------------------------------------------- IDENTIFICAÇÃO */
@@ -192,34 +178,18 @@ export const site = {
       'Nada disso significa má prática. Significa que transtornos de humor exigem um raciocínio próprio — e ele raramente é ensinado de forma aplicada.',
   },
 
-  /* ------------------------------------------------------------- SOLUÇÃO */
-  solution: {
-    eyebrow: 'Existe outro caminho',
-    title: 'Você não precisa decidir no improviso',
-    text: 'Com um raciocínio clínico organizado, critérios claros de avaliação e estratégias de manejo bem definidas, é possível chegar na sessão com muito mais clareza sobre o que observar, o que perguntar e o que fazer em seguida. São os três eixos que dão nome ao minicurso:',
-    steps: [
-      {
-        step: '01',
-        title: 'Compreensão',
-        text: 'Os principais transtornos de humor como eles aparecem na clínica — não apenas como estão descritos nos manuais.',
-      },
-      {
-        step: '02',
-        title: 'Avaliação',
-        text: 'Como conduzir a avaliação, o que se confunde com o quê e como sustentar uma hipótese diagnóstica.',
-      },
-      {
-        step: '03',
-        title: 'Manejo clínico',
-        text: 'Estratégias de condução mais seguras, com critérios de conduta, acompanhamento e encaminhamento.',
-      },
-    ],
-  },
-
-  /* -------------------------------------------------------------- MÓDULOS */
+  /* -------------------------------------------------------------- MÓDULOS
+     Antes havia uma seção "Solução" separada repetindo os mesmos 3 eixos
+     (Compreensão/Avaliação/Manejo) de forma mais curta, logo antes desta.
+     Removida — os módulos abaixo já contam a mesma história com mais
+     substância (descrição + o que muda na prática), então tê-las nas duas
+     seções era o mesmo conteúdo duas vezes seguidas.
+     -------------------------------------------------------------------- */
   modules: {
-    eyebrow: 'Conteúdo',
+    eyebrow: 'Como o minicurso está organizado',
     title: 'O que você vai ver no minicurso',
+    subtitle:
+      'Com um raciocínio clínico organizado, critérios claros de avaliação e estratégias de manejo bem definidas, é possível chegar na sessão com muito mais clareza sobre o que observar, o que perguntar e o que fazer em seguida.',
     /** Aviso exibido enquanto a grade não for confirmada. Deixe null quando confirmar. */
     draftNotice:
       'Grade em rascunho, montada sobre os três eixos do nome oficial do minicurso — confirmar títulos, ordem, número de aulas e carga horária antes de publicar.',
@@ -280,17 +250,6 @@ export const site = {
         text: 'Explicar sua leitura para o paciente, a família e a equipe.',
       },
     ],
-    features: {
-      title: 'E na prática você recebe',
-      items: [
-        'Aulas online gravadas, liberadas de uma vez',
-        'Acesso pelo celular, tablet ou computador',
-        'Suporte de dúvidas pelo WhatsApp',
-        'Material complementar de apoio',
-        P('CERTIFICADO'),
-        P('TEMPO DE ACESSO'),
-      ],
-    },
   },
 
   /* -------------------------------------------------------------- PÚBLICO */
@@ -378,31 +337,9 @@ export const site = {
   /** Números só entram aqui quando forem verificáveis. Vazio = seção oculta. */
   stats: [] as { value: string; label: string }[],
 
-  /* --------------------------------------------------------- TRANSFORMAÇÃO */
-  transformation: {
-    eyebrow: 'Antes e depois',
-    title: 'O que você poderá desenvolver',
-    disclaimer:
-      'Resultados dependem da aplicação de cada profissional no seu próprio contexto de atuação. O curso não garante desfechos clínicos.',
-    before: {
-      title: 'Hoje',
-      items: [
-        'Dúvida entre quadros que se parecem',
-        'Conduta definida no improviso',
-        'Insegurança para sustentar a hipótese',
-        'Revisão do caso depois da sessão',
-      ],
-    },
-    after: {
-      title: 'Depois do minicurso',
-      items: [
-        'Critérios claros de diferenciação',
-        'Caminho de raciocínio definido',
-        'Mais firmeza na condução do caso',
-        'Leitura clínica mais organizada',
-      ],
-    },
-  },
+  /* Seção "Transformação" (antes/depois) removida — dizia, com outras
+     palavras, o mesmo que a seção "Benefícios" logo acima. Ver histórico
+     do git se precisar recuperar o texto. */
 
   /* ------------------------------------------------------------- INCLUÍDO */
   included: {
@@ -410,48 +347,53 @@ export const site = {
     title: 'O que está incluído',
     items: [
       'Minicurso completo em vídeo',
-      P('Nº DE MÓDULOS') + ' módulos',
-      P('Nº DE AULAS') + ' aulas',
       'Suporte de dúvidas pelo WhatsApp',
       'Material complementar',
-      P('CERTIFICADO'),
-      'Acesso online, no seu ritmo',
-      P('TEMPO DE ACESSO'),
-      'Garantia de ' + P('X') + ' dias pela Hotmart',
+      'Certificado de conclusão',
+      'Acesso online, no seu ritmo, por 1 ano',
+      'Garantia de 7 dias pela Hotmart',
     ],
   },
 
   /* ---------------------------------------------------------------- BÔNUS
-     Deixe o array vazio se não houver bônus — a seção some sozinha.
+     Sem bônus neste minicurso — array vazio esconde a coluna sozinho
+     (ver components/landing/Included.tsx).
      -------------------------------------------------------------------- */
-  bonuses: [
-    {
-      number: '01',
-      title: P('NOME DO BÔNUS 1'),
-      description: P('DESCRIÇÃO DO BÔNUS 1'),
-    },
-  ] as Bonus[],
+  bonuses: [] as Bonus[],
 
   /* ---------------------------------------------------------------- OFERTA */
   offer: {
     eyebrow: 'Investimento',
     title: 'Acesso completo ao minicurso',
-    /** Preço "de" — deixe null se não houver desconto real. Nunca invente âncora. */
-    fullPrice: P('PREÇO CHEIO') as string | null,
-    price: P('PREÇO'),
-    installments: P('PARCELAMENTO'),
-    paymentMethods: P('FORMAS DE PAGAMENTO — cartão, Pix, boleto'),
+    /**
+     * Preços confirmados no checkout real da Hotmart (E107360174P) em
+     * 03/09/2026. O "de" (R$ 199,99) foi definido pelo cliente como preço
+     * de referência da oferta — não é um valor visto no checkout, é uma
+     * decisão comercial do produtor. Vale lembrar (não é aviso legal, só
+     * um ponto de atenção): o Código de Defesa do Consumidor exige que um
+     * preço "de" comparativo tenha sido praticado de fato em algum momento,
+     * então vale confirmar isso com quem cuida do jurídico da clínica.
+     */
+    fullPrice: 'R$ 199,99' as string | null,
+    price: 'R$ 79,00',
+    installments: '12x de R$ 8,17 no cartão',
+    /** Removido a pedido do cliente — a tela de checkout da Hotmart já
+     *  mostra todas as opções (cartão, Pix, boleto, PayPal, Google Pay...). */
+    paymentMethods: null as string | null,
     cta: 'Quero garantir minha vaga',
     /** Urgência só entra aqui se for verdadeira (ex.: turma com data). */
     urgency: null as string | null,
   },
 
-  /* -------------------------------------------------------------- GARANTIA */
+  /* -------------------------------------------------------------- GARANTIA
+     A seção dedicada de garantia foi removida — a informação já aparece
+     junto ao preço (Offer), no checklist (Included), no FAQ e nos CTAs
+     finais, que é exatamente onde o comprador mais precisa dela. Este
+     campo continua existindo só porque vários componentes reaproveitam o
+     número de dias.
+     -------------------------------------------------------------------- */
   guarantee: {
-    eyebrow: 'Risco zero',
-    days: P('X'),
-    title: 'Você pode conhecer o minicurso sem assumir todo o risco',
-    text: 'Se dentro do prazo de garantia você concluir que o conteúdo não é para o seu momento, basta solicitar o reembolso pela própria plataforma da Hotmart. Sem justificativa e sem burocracia.',
+    days: '7',
   },
 
   /* ------------------------------------------------------------------ FAQ */
@@ -473,11 +415,11 @@ export const site = {
     },
     {
       question: 'Por quanto tempo tenho acesso?',
-      answer: P('TEMPO DE ACESSO — ex.: 12 meses a partir da confirmação da compra'),
+      answer: 'Você tem acesso por 1 ano a partir da confirmação da compra.',
     },
     {
       question: 'O minicurso emite certificado?',
-      answer: P('CERTIFICADO — confirmar emissão, carga horária e formato'),
+      answer: 'Sim, você recebe certificado de conclusão ao final do minicurso.',
     },
     {
       question: 'Consigo tirar dúvidas durante o curso?',
@@ -503,19 +445,16 @@ export const site = {
     {
       question: 'Como funciona a garantia?',
       answer:
-        'A garantia é de ' +
-        P('X') +
-        ' dias, oferecida pela Hotmart. Dentro desse prazo você pode solicitar o reembolso integral pela própria plataforma.',
+        'A garantia é de 7 dias, oferecida pela Hotmart. Dentro desse prazo você pode solicitar o reembolso integral pela própria plataforma.',
     },
     {
       question: 'Como funciona o pagamento?',
       answer:
-        'Todo o pagamento acontece no ambiente seguro da Hotmart. Formas disponíveis: ' +
-        P('FORMAS DE PAGAMENTO'),
+        'Todo o pagamento acontece no ambiente seguro da Hotmart. Você pode pagar no cartão de crédito (em até 12x), Pix, boleto, PayPal, Google Pay ou outras opções que aparecem diretamente na tela de checkout.',
     },
     {
       question: 'Posso parcelar?',
-      answer: P('PARCELAMENTO — ex.: até 12x no cartão de crédito'),
+      answer: 'Sim — em até 12x de R$ 8,17 no cartão de crédito, ou R$ 79,00 à vista.',
     },
     {
       question: 'Quando eu começo?',
@@ -533,7 +472,17 @@ export const site = {
 
   /* --------------------------------------------------------------- RODAPÉ */
   footer: {
+<<<<<<< Updated upstream
     producer: 'Clínica Psychëar',
+=======
+    /**
+     * "Psiquear Cursos" é a grafia usada no cadastro da Hotmart (mesma
+     * empresa/pessoa de "Clínica Psychëar" — confirmado com o cliente).
+     * Mostrar as duas evita que o comprador estranhe um nome diferente
+     * na fatura do cartão / recibo da Hotmart.
+     */
+    producer: 'Clínica Psychëar (Psiquear Cursos)',
+>>>>>>> Stashed changes
     document: P('CNPJ'),
     email: P('E-MAIL DE CONTATO'),
     privacyUrl: P('URL DA POLÍTICA DE PRIVACIDADE'),
